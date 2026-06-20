@@ -1,87 +1,167 @@
-<h1>Adam O’Brien, PhD</h1>
-<p>obrienadam89@gmail.com | (603) 266-7012 | Mountain View, CA</p>
-<p><a href="https://github.com/obrienadam">GitHub</a> | <a href="https://www.linkedin.com/in/obrien-adam/">LinkedIn</a></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resume of Adam O’Brien, PhD - Systems Engineer specializing in Machine Learning Infrastructure, JAX/XLA, and High-Performance Numerical Computing.">
+  <title>Adam O’Brien, PhD - Resume</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-top">
+        <div>
+          <h1 id="candidate-name">Adam O’Brien, PhD</h1>
+          <div class="subtitle">High-Performance Computing • Low-Latency ML Infrastructure • Numerical Simulation</div>
+        </div>
+        <button id="download-pdf-btn" class="download-btn" onclick="window.print()">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/>
+          </svg>
+          Download PDF
+        </button>
+      </div>
+      <div class="contact-info">
+        <span>Email: <a href="mailto:obrienadam89@gmail.com">obrienadam89@gmail.com</a></span>
+        <span>Phone: (603) 266-7012</span>
+        <span>Location: Mountain View, CA</span>
+        <span><a href="https://github.com/obrienadam" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+        <span><a href="https://www.linkedin.com/in/obrien-adam/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+      </div>
+    </header>
 
-<hr />
+    <div class="main-col">
+      <section id="summary">
+        <h2>Summary</h2>
+        <p class="summary-text">
+          Systems Engineer and Computational Scientist with a PhD in Applied Mathematics and 7+ years of experience designing high-performance computing systems, low-latency runtime components, and massive-scale simulation engines. Expert in <strong>JAX/XLA compiler optimizations</strong>, low-overhead <strong>GPU/TPU acceleration (CUDA, XLA)</strong>, zero-copy RPC architectures, and large-scale numerical fluid solvers. Proven track record of optimizing core compute infrastructure to drive significant cost savings and throughput increases (up to 3x) in production environments.
+        </p>
+      </section>
 
-<h2>Summary</h2>
-<p>Versatile and impact-driven Software Engineer with an extensive track record in high-performance computing, machine learning infrastructure, data pipelines, and scalable simulation engines. Combines a PhD-level foundation in numerical computing with robust industrial experience building core runtime components, high-throughput data ingestion pipelines, and performance-critical systems natively in C++ and Python.</p>
+      <section id="experience">
+        <h2>Work Experience</h2>
 
-<hr />
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="company">Google LLC</span>
+            <span class="date">Apr. 2023 – Present</span>
+          </div>
+          <div class="role">Software Engineer – Machine Learning Infrastructure | Sunnyvale, CA</div>
+          <ul>
+            <li>
+              <div class="category-title">Data Infrastructure (PyGrain & JAX Data)</div>
+              <ul class="exp-bullets">
+                <li>Maintain and scale <strong>PyGrain</strong> and <strong>JAX Data</strong>, the foundational data pipeline libraries handling ingestion and processing for JAX-based training workloads globally across Google.</li>
+                <li>Engineered memory-efficient, low-latency shared platform tooling utilizing <strong>zero-copy shared memory (shm) and IPC techniques</strong>, significantly reducing serialization overhead for high-throughput model training.</li>
+                <li>Architected next-generation serving and inference infrastructure, bridging massive training-data workflows with low-latency production model delivery.</li>
+              </ul>
+            </li>
+            <li>
+              <div class="category-title">ML DNA: Scaling & Infrastructure</div>
+              <ul class="exp-bullets">
+                <li>Designed and built Google's high-performance <strong>JAX CPU embedding library</strong> from the ground up, providing specialized infrastructure for accelerated embedding lookups and processing.</li>
+                <li>Engineered JAX Parameter Server Training (PST) and production scaling architectures optimized for massive-scale recommendation and ranking models powering Ads, YouTube, Play, and Geo.</li>
+                <li>Optimized parameter server infrastructure to deliver up to a <strong>3x throughput improvement</strong> in dense worker/server topographies by implementing zero-copy RPC handlers, custom cache-friendly C++ data structures, and low-overhead threading models.</li>
+                <li>Developed a scalable native C++ optimizer library from scratch, introducing horizontally scalable optimization routines tailored specifically for parameter server topologies.</li>
+                <li>Partnered directly with product teams to guide architectural migration strategies to TPU hardware, maximizing resource utilization for exceptionally large embedding models.</li>
+                <li>Honored with the organization's <strong>"Velocity" Award</strong> for cross-functional impact in successfully launching JAX PST into production.</li>
+              </ul>
+            </li>
+            <li>
+              <div class="category-title">Megascale XLA</div>
+              <ul class="exp-bullets">
+                <li>Contributed as a core infrastructure engineer on the Megascale XLA team, focusing on vertical and horizontal scaling challenges of large language and foundation model workloads.</li>
+                <li>Co-authored network topology-aware collective communication primitives to facilitate efficient distributed ML training clusters operating across cross-metro infrastructure, receiving the internal <strong>"Gold Perfy" Award</strong>.</li>
+                <li>Designed host-offloaded compute strategies and custom fused compiler passes in XLA to unblock training efficiency boundaries across multi-slice TPU deployments.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
 
-<h2>Work Experience</h2>
+        <div class="exp-item page-break">
+          <div class="exp-header">
+            <span class="company">Aurora Innovation</span>
+            <span class="date">Oct. 2021 – Apr. 2023</span>
+          </div>
+          <div class="role">Senior Software Engineer – Motion Planning Simulation | Mountain View, CA</div>
+          <ul class="exp-bullets">
+            <li>Architected core high-performance software components in C++ for a highly distributed, massive-scale motion planning simulation engine executing millions of autonomous vehicle scenarios daily.</li>
+            <li>Developed dynamic agent behavior routing frameworks, introducing adversarial interaction profiles and real-time lane-changing mechanics to evaluate safety-critical edge cases.</li>
+            <li>Created automated validation tools for Foreign Object Debris (FOD) simulations, engineering workflows that dynamically combined real-world sensor logs with synthetic environmental augmentations.</li>
+            <li>Discovered and executed sweeping runtime optimizations within the mapping and routing engine, generating audited infrastructure savings of <strong>~$130,000 per month</strong> in cloud compute expenditures.</li>
+          </ul>
+        </div>
 
-<h3><strong>Google LLC</strong> <span style="float:right;">Apr. 2023 – Present</span></h3>
-<p><em>Software Engineer – Machine Learning Infrastructure</em> | Sunnyvale, CA</p>
-<ul>
-  <li><strong>Data Infrastructure (PyGrain & JAX Data):</strong>
-    <ul>
-      <li>Maintain and scale <strong>PyGrain</strong> and JAX Data, the foundational data pipeline libraries handling ingestion and processing for JAX-based training workloads globally across Google.</li>
-      <li>Own shared platform tooling utilized across deep learning teams to guarantee end-to-end data pipeline reliability, performance optimization, and seamless high-throughput training inputs.</li>
-      <li>Architect and support next-generation serving and inference infrastructure, bridging the gap between massive training-data workflows and low-latency production model delivery.</li>
-    </ul>
-  </li>
-  <li><strong>ML DNA: Scaling & Infrastructure:</strong>
-    <ul>
-      <li>Designed and built Google's high-performance <strong>JAX CPU embedding library</strong> from the ground up, providing specialized infrastructure for accelerated embedding lookups and processing.</li>
-      <li>Engineered JAX Parameter Server Training (PST) and production scaling architectures optimized for massive-scale recommendation and ranking models powering Ads, YouTube, Play, and Geo.</li>
-      <li>Optimized the JAX parameter server infrastructure to deliver up to a <strong>3x throughput improvement</strong> in dense worker/server topographies by implementing zero-copy RPC handlers and low-overhead threading patterns.</li>
-      <li>Developed a scalable native C++ optimizer library from scratch, introducing horizontally scalable optimization routines tailored specifically for parameter server topologies.</li>
-      <li>Partnered directly with key Google product areas to guide architectural migration strategies to TPU hardware, maximizing resource utilization for exceptionally large embedding models.</li>
-      <li>Honored with the organization's <strong>"Velocity" Award</strong> for cross-functional impact in successfully launching JAX PST into production.</li>
-    </ul>
-  </li>
-  <li><strong>Megascale XLA:</strong>
-    <ul>
-      <li>Contributed as a core infrastructure engineer on the Megascale XLA team, focusing on the vertical and horizontal scaling challenges of large language and foundation model workloads.</li>
-      <li>Co-authored network topology-aware collective primitives to facilitate efficient distributed ML training clusters operating across cross-metro infrastructure, receiving the internal <strong>"Gold Perfy" Award</strong>.</li>
-      <li>Designed host-offloaded compute strategies to unblock training efficiency boundaries across multi-slice TPU deployments.</li>
-    </ul>
-  </li>
-</ul>
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="company">Siemens PLM Software</span>
+            <span class="date">Jul. 2019 – Oct. 2021</span>
+          </div>
+          <div class="role">Advanced Software Engineer – Physics Solvers | Lebanon, NH</div>
+          <ul class="exp-bullets">
+            <li>Maintained and optimized parallel fluid dynamics solvers within the flagship industrial simulation suite <strong>STAR-CCM+</strong>.</li>
+            <li>Researched and implemented highly parallelized computational methods (<strong>MPI, OpenMP</strong>) to resolve large-scale, complex partial differential equations on multi-node cluster topographies.</li>
+            <li>Accelerated core Algebraic Multi-Grid (AMG) linear solvers via high-performance GPU offloading using <strong>CUDA</strong>.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
 
-<h3><strong>Aurora Innovation</strong> <span style="float:right;">Oct. 2021 – Apr. 2023</span></h3>
-<p><em>Senior Software Engineer – Motion Planning Simulation</em> | Mountain View, CA</p>
-<ul>
-  <li>Architected core software components for a highly distributed, massive-scale motion planning simulation engine executing millions of autonomous vehicle scenarios daily.</li>
-  <li>Developed dynamic agent behavior routing frameworks, introducing adversarial interaction profiles and real-time lane-changing mechanics to evaluate safety-critical edge cases.</li>
-  <li>Created automated validation tools for Foreign Object Debris (FOD) simulations, engineering workflows that dynamically combined real-world sensor logs with synthetic environmental augmentations.</li>
-  <li>Discovered and executed sweeping runtime optimizations within the mapping and routing engine, generating audited infrastructure savings of <strong>~$130,000 per month</strong> in cloud compute expenditures.</li>
-</ul>
+    <div class="sidebar-col">
+      <section id="education">
+        <h2>Education</h2>
+        <div class="edu-item">
+          <div class="edu-header">
+            <strong>University of Toronto</strong>
+          </div>
+          <div class="degree">PhD in Computational Science / Applied Mathematics</div>
+          <div class="date">Sep. 2014 – Jul. 2019</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            Thesis: Immersed boundary methods for moving bodies at fluid-fluid-interfaces (~60 academic citations).
+          </p>
+        </div>
+      </section>
 
-<h3><strong>Siemens PLM Software</strong> <span style="float:right;">Jul. 2019 – Oct. 2021</span></h3>
-<p><em>Advanced Software Engineer – Physics Solvers</em> | Lebanon, NH</p>
-<ul>
-  <li>Maintained and optimized parallel fluid dynamics solvers within the flagship industrial simulation suite STAR-CCM+.</li>
-  <li>Researched and implemented highly parallelized computational methods to resolve large-scale, complex partial differential equations on multi-node cluster topographies.</li>
-  <li>Accelerated core Algebraic Multi-Grid (AMG) linear solvers via high-performance GPU offloading using CUDA.</li>
-</ul>
+      <section id="skills">
+        <h2>Skills</h2>
+        
+        <div class="skills-group">
+          <h3>Languages</h3>
+          <div class="skills-list">
+            <span class="skill-tag">C/C++</span>
+            <span class="skill-tag">CUDA</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Fortran</span>
+          </div>
+        </div>
 
-<hr />
+        <div class="skills-group">
+          <h3>Systems & compilers</h3>
+          <div class="skills-list">
+            <span class="skill-tag">XLA</span>
+            <span class="skill-tag">JAX Data</span>
+            <span class="skill-tag">PyGrain</span>
+            <span class="skill-tag">MPI</span>
+            <span class="skill-tag">OpenMP</span>
+            <span class="skill-tag">RPC/IPC</span>
+            <span class="skill-tag">TPU/GPU</span>
+          </div>
+        </div>
 
-<h2>Education</h2>
-
-<h3><strong>University of Toronto</strong> <span style="float:right;">Sep. 2014 – Jul. 2019</span></h3>
-<p><em>PhD in Computational Science / Applied Mathematics</em> | Toronto, ON, Canada</p>
-<ul>
-  <li><strong>Thesis:</strong> Development of an immersed boundary method for moving bodies at fluid-fluid-interfaces.</li>
-  <li>Authored multiple peer-reviewed publications in elite numerical and computational journals (~60 academic citations).</li>
-</ul>
-
-<hr />
-
-<h2>Technical Skills</h2>
-<table>
-  <tr>
-    <td><strong>Languages:</strong></td>
-    <td>C/C++, Python, Java, Fortran, CUDA, XLA</td>
-  </tr>
-  <tr>
-    <td><strong>Frameworks & Engines:</strong></td>
-    <td>JAX, PyGrain, TensorFlow, XLA, NumPy, MPI, OpenMP</td>
-  </tr>
-  <tr>
-    <td><strong>Numerical Software:</strong></td>
-    <td>BLAS, LAPACK, Eigen, PETSc, HYPRE, Trilinos</td>
-  </tr>
-</table>
+        <div class="skills-group">
+          <h3>Numerical Math</h3>
+          <div class="skills-list">
+            <span class="skill-tag">PETSc</span>
+            <span class="skill-tag">Trilinos</span>
+            <span class="skill-tag">AMG</span>
+            <span class="skill-tag">Eigen</span>
+            <span class="skill-tag">BLAS/LAPACK</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
