@@ -63,6 +63,7 @@ h1 {
   letter-spacing: -0.025em;
   background: linear-gradient(135deg, #fff 30%, var(--primary-color) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.5rem;
 }
@@ -82,16 +83,31 @@ h1 {
   gap: 1.5rem;
   font-size: 0.95rem;
   color: var(--text-muted);
+  align-items: center;
 }
 
 .contact-info a {
   color: var(--text-muted);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .contact-info a:hover {
   color: var(--primary-color);
+}
+
+.contact-info .icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.contact-info a:hover .icon {
+  transform: scale(1.15);
 }
 
 .download-btn {
