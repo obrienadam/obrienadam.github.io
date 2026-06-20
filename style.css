@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --bg-color: #0b0f19;
-  --card-bg: #151b2c;
-  --text-color: #f1f5f9;
-  --text-muted: #94a3b8;
-  --primary-color: #38bdf8; /* Cyan */
-  --primary-hover: #0ea5e9;
-  --accent-color: #818cf8;  /* Indigo Accent */
-  --border-color: #1e293b;
+  --bg-color: #f8fafc;        /* Soft off-white / light slate */
+  --card-bg: #ffffff;         /* Pure white container */
+  --text-color: #1e293b;      /* Deep slate-800 */
+  --text-muted: #475569;      /* Muted slate-600 */
+  --primary-color: #0f172a;   /* Slate-900 */
+  --primary-hover: #4f46e5;   /* Indigo accent on hover */
+  --accent-color: #4f46e5;    /* Accent Indigo */
+  --border-color: #e2e8f0;    /* Light gray borders */
   
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: 'Fira Code', monospace;
@@ -38,16 +38,16 @@ body {
   grid-template-columns: 2.5fr 1fr;
   gap: 2.5rem;
   background-color: var(--card-bg);
-  padding: 3rem;
-  border-radius: 16px;
+  padding: 3.5rem;
+  border-radius: 12px;
   border: 1px solid var(--border-color);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.025);
 }
 
 header {
   grid-column: span 2;
   border-bottom: 2px solid var(--border-color);
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.75rem;
   position: relative;
 }
 
@@ -61,29 +61,26 @@ h1 {
   font-size: 2.5rem;
   font-weight: 800;
   letter-spacing: -0.025em;
-  background: linear-gradient(135deg, #fff 30%, var(--primary-color) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
-  font-size: 1.1rem;
-  color: var(--primary-color);
+  font-size: 1.05rem;
+  color: var(--accent-color);
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.025em;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .contact-info {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 1.5rem;
   font-size: 0.95rem;
   color: var(--text-muted);
-  align-items: center;
 }
 
 .contact-info a {
@@ -96,18 +93,31 @@ h1 {
 }
 
 .contact-info a:hover {
-  color: var(--primary-color);
+  color: var(--accent-color);
 }
 
 .contact-info .icon {
   width: 18px;
   height: 18px;
   fill: currentColor;
-  transition: transform 0.2s ease;
+  color: var(--text-muted);
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .contact-info a:hover .icon {
-  transform: scale(1.15);
+  transform: translateY(-1px);
+  color: var(--accent-color);
+}
+
+/* Social glyphs styling (no text) */
+.social-glyph {
+  padding: 0.25rem;
+}
+
+.social-glyph .icon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
 }
 
 .download-btn {
@@ -115,19 +125,19 @@ h1 {
   align-items: center;
   gap: 0.5rem;
   background-color: var(--primary-color);
-  color: #0b0f19;
+  color: #ffffff;
   font-weight: 600;
   font-size: 0.9rem;
   padding: 0.75rem 1.25rem;
-  border-radius: 8px;
-  border: none;
+  border-radius: 6px;
+  text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 14px 0 rgba(56, 189, 248, 0.3);
+  border: none;
 }
 
 .download-btn:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--accent-color);
   transform: translateY(-1px);
 }
 
@@ -151,10 +161,10 @@ h1 {
 }
 
 section h2 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.075em;
+  letter-spacing: 0.05em;
   color: var(--primary-color);
   margin-bottom: 1.25rem;
   border-bottom: 1px solid var(--border-color);
@@ -178,9 +188,9 @@ section h2 {
 }
 
 .company {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: var(--text-color);
+  color: var(--primary-color);
 }
 
 .date {
@@ -212,7 +222,7 @@ ul {
 .category-title {
   font-weight: 700;
   font-size: 0.95rem;
-  color: var(--text-color);
+  color: var(--primary-color);
   margin-bottom: 0.35rem;
   display: flex;
   align-items: center;
@@ -221,7 +231,7 @@ ul {
 
 .category-title::before {
   content: "▹";
-  color: var(--primary-color);
+  color: var(--accent-color);
   font-weight: bold;
 }
 
@@ -247,7 +257,7 @@ ul {
 }
 
 strong {
-  color: #fff;
+  color: var(--primary-color);
   font-weight: 600;
 }
 
@@ -275,24 +285,24 @@ strong {
 }
 
 .skills-group h3 {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--text-color);
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .skill-tag {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  background-color: #1e293b;
-  color: var(--primary-color);
+  background-color: #f1f5f9;
+  color: var(--text-color);
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   border: 1px solid var(--border-color);
@@ -321,156 +331,5 @@ strong {
   
   .download-btn {
     align-self: flex-start;
-  }
-}
-
-/* ==========================================================================
-   PRINT MEDIA STYLESHEET (PDF Export Styling)
-   ========================================================================== */
-@media print {
-  @page {
-    size: A4 portrait;
-    margin: 12mm 15mm;
-  }
-  
-  body {
-    background-color: #ffffff !important;
-    color: #1e293b !important;
-    padding: 0 !important;
-    font-size: 9.5pt !important;
-    line-height: 1.35 !important;
-  }
-
-  .container {
-    background-color: #ffffff !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    grid-template-columns: 1fr !important; /* Stack columns or keep clean inline sections */
-    gap: 1.5rem !important;
-    max-width: 100% !important;
-  }
-
-  header {
-    grid-column: span 1 !important;
-    border-bottom: 1.5px solid #cbd5e1 !important;
-    padding-bottom: 1rem !important;
-  }
-
-  .header-top {
-    align-items: center !important;
-  }
-
-  h1 {
-    font-size: 20pt !important;
-    background: none !important;
-    -webkit-text-fill-color: #0f172a !important;
-    color: #0f172a !important;
-  }
-
-  .subtitle {
-    font-size: 10pt !important;
-    color: #475569 !important;
-    margin-bottom: 0.5rem !important;
-  }
-
-  .contact-info {
-    gap: 1rem !important;
-    font-size: 8.5pt !important;
-    color: #475569 !important;
-  }
-
-  .contact-info a {
-    color: #475569 !important;
-  }
-
-  .download-btn {
-    display: none !important; /* Hide PDF button when generating PDF */
-  }
-
-  /* Rearrange columns for a beautiful 2-column or sequential print layout */
-  .main-col {
-    gap: 1.25rem !important;
-  }
-
-  .sidebar-col {
-    gap: 1.25rem !important;
-  }
-
-  section h2 {
-    font-size: 11pt !important;
-    color: #0f172a !important;
-    border-bottom: 1px solid #cbd5e1 !important;
-    margin-bottom: 0.75rem !important;
-    padding-bottom: 0.25rem !important;
-  }
-
-  .company, .degree {
-    font-size: 10pt !important;
-    color: #0f172a !important;
-  }
-
-  .date {
-    font-size: 8.5pt !important;
-    color: #475569 !important;
-  }
-
-  .role {
-    font-size: 9pt !important;
-    color: #4f46e5 !important; /* Keep a nice slate indigo or dark gray */
-    margin-bottom: 0.4rem !important;
-  }
-
-  .category-title {
-    font-size: 9pt !important;
-    color: #0f172a !important;
-    margin-bottom: 0.15rem !important;
-  }
-
-  .category-title::before {
-    content: "■" !important;
-    font-size: 6pt !important;
-    color: #4f46e5 !important;
-  }
-
-  .exp-bullets {
-    margin-left: 0.75rem !important;
-  }
-
-  .exp-bullets li {
-    font-size: 8.5pt !important;
-    color: #334155 !important;
-    margin-bottom: 0.25rem !important;
-  }
-
-  .exp-bullets li::before {
-    color: #4f46e5 !important;
-  }
-
-  strong {
-    color: #000000 !important;
-    font-weight: 700 !important;
-  }
-
-  .skills-list {
-    gap: 0.35rem !important;
-  }
-
-  .skill-tag {
-    font-size: 7.5pt !important;
-    background-color: #f1f5f9 !important;
-    color: #0f172a !important;
-    border: 1px solid #cbd5e1 !important;
-    padding: 0.15rem 0.35rem !important;
-  }
-
-  .summary-text {
-    font-size: 8.5pt !important;
-    color: #334155 !important;
-  }
-
-  /* Force page breaks cleanly */
-  .page-break {
-    page-break-before: always;
   }
 }

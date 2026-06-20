@@ -1,0 +1,34 @@
+name: Compile LaTeX Resume
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'resume.tex'
+      - '.github/workflows/compile-latex.yml'
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+
+      - name: Commit and Push PDF
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add resume.pdf
+          # Check if there are changes before committing to avoid error exit codes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-compiled resume.pdf [skip ci]"
+            git push
+          fi

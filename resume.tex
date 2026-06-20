@@ -1,0 +1,100 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{color}
+
+% Color definitions for clean look
+\definecolor{darkblue}{rgb}{0.0,0.0,0.5}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,      
+    urlcolor=darkblue,
+    pdftitle={Adam O'Brien, PhD - Resume},
+    pdfpagemode=FullScreen,
+}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{12pt}{8pt}
+
+% Styling definitions
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeHeading}[4]{
+  \noindent\textbf{#1} \hfill #2 \\
+  \noindent\textit{#3} \hfill \small{#4} \\
+  \vspace{2pt}
+}
+
+\setlist[itemize]{leftmargin=15pt, label=--}
+
+\begin{document}
+
+\pagestyle{empty}
+
+% Header
+\begin{center}
+    {\Huge\bfseries Adam O'Brien, PhD} \\
+    \vspace{4pt}
+    \small
+    Mountain View, CA $\cdot$ (603) 266-7012 $\cdot$ \href{mailto:obrienadam89@gmail.com}{obrienadam89@gmail.com} \\
+    \href{https://github.com/obrienadam}{github.com/obrienadam} $\cdot$ \href{https://www.linkedin.com/in/obrien-adam/}{linkedin.com/in/obrien-adam}
+\end{center}
+
+\vspace{6pt}
+
+% Summary
+\section{Summary}
+Systems Engineer and Computational Scientist with a PhD in Applied Mathematics and 7+ years of experience designing high-performance computing systems, low-latency runtime components, and massive-scale simulation engines. Expert in \textbf{JAX/XLA compiler optimizations}, low-overhead \textbf{GPU/TPU acceleration (CUDA, XLA)}, zero-copy RPC architectures, and large-scale numerical fluid solvers. Proven track record of optimizing core compute infrastructure to drive significant cost savings and throughput increases (up to 3x) in production environments.
+
+% Experience
+\section{Work Experience}
+
+\resumeHeading{Google LLC}{Sunnyvale, CA}{Software Engineer -- Machine Learning Infrastructure}{Apr. 2023 -- Present}
+\begin{itemize}[itemsep=4pt]
+    \resumeItem{\textbf{Data Infrastructure (PyGrain \& JAX Data):} Maintain and scale PyGrain and JAX Data, the foundational data pipeline libraries handling ingestion and processing for JAX-based training workloads globally across Google. Engineered memory-efficient, low-latency shared platform tooling utilizing \textbf{zero-copy shared memory (shm) and IPC techniques}, reducing serialization overhead for high-throughput model training.}
+    \resumeItem{\textbf{ML DNA (Scaling \& Infrastructure):} Designed and built Google's high-performance \textbf{JAX CPU embedding library} from the ground up, providing specialized infrastructure for accelerated embedding lookups. Engineered JAX Parameter Server Training (PST) and production scaling architectures optimized for massive-scale recommendation and ranking models powering Ads, YouTube, Play, and Geo.}
+    \resumeItem{\textbf{Performance Optimization:} Optimized parameter server infrastructure to deliver up to a \textbf{3x throughput improvement} in dense worker/server topographies by implementing zero-copy RPC handlers, custom cache-friendly C++ data structures, and low-overhead threading models.}
+    \resumeItem{\textbf{C++ Systems Engineering:} Developed a scalable native C++ optimizer library from scratch, introducing horizontally scalable optimization routines tailored specifically for parameter server topologies. Partnered directly with product teams to guide architectural migration strategies to TPU hardware, maximizing resource utilization.}
+    \resumeItem{\textbf{Megascale XLA:} Contributed as a core infrastructure engineer on the Megascale XLA team, focusing on vertical/horizontal scaling of large foundation model workloads. Co-authored network topology-aware collective communication primitives to facilitate efficient distributed ML training clusters operating across cross-metro infrastructure. Designed host-offloaded compute strategies and custom fused compiler passes in XLA to unblock training efficiency boundaries.}
+\end{itemize}
+
+\vspace{6pt}
+
+\resumeHeading{Aurora Innovation}{Mountain View, CA}{Senior Software Engineer -- Motion Planning Simulation}{Oct. 2021 -- Apr. 2023}
+\begin{itemize}[itemsep=4pt]
+    \resumeItem{Architected core high-performance software components in C++ for a highly distributed, massive-scale motion planning simulation engine executing millions of autonomous vehicle scenarios daily.}
+    \resumeItem{Developed dynamic agent behavior routing frameworks, introducing adversarial interaction profiles and real-time lane-changing mechanics to evaluate safety-critical edge cases.}
+    \resumeItem{Created automated validation tools for Foreign Object Debris (FOD) simulations, engineering workflows that dynamically combined real-world sensor logs with synthetic environmental augmentations.}
+    \resumeItem{Discovered and executed sweeping runtime optimizations within the mapping and routing engine, generating audited infrastructure savings of \textbf{\textasciitilde\$130,000 per month} in cloud compute expenditures.}
+\end{itemize}
+
+\vspace{6pt}
+
+\resumeHeading{Siemens PLM Software}{Lebanon, NH}{Advanced Software Engineer -- Physics Solvers}{Jul. 2019 -- Oct. 2021}
+\begin{itemize}[itemsep=4pt]
+    \resumeItem{Maintained and optimized parallel fluid dynamics solvers within the flagship industrial simulation suite \textbf{STAR-CCM+}.}
+    \resumeItem{Researched and implemented highly parallelized computational methods (\textbf{MPI, OpenMP}) to resolve large-scale, complex partial differential equations on multi-node cluster topographies.}
+    \resumeItem{Accelerated core Algebraic Multi-Grid (AMG) linear solvers via high-performance GPU offloading using \textbf{CUDA}.}
+\end{itemize}
+
+% Education
+\section{Education}
+\noindent\textbf{University of Toronto} \hfill Toronto, ON, Canada \\
+\textit{PhD in Computational Science / Applied Mathematics} \hfill Sep. 2014 -- Jul. 2019 \\
+\vspace{-2pt}
+\begin{itemize}[leftmargin=15pt, itemsep=2pt]
+    \resumeItem{Thesis: Immersed boundary methods for moving bodies at fluid-fluid-interfaces.}
+    \resumeItem{Authored multiple peer-reviewed publications in numerical and computational journals (\textasciitilde 60 academic citations).}
+\end{itemize}
+
+% Technical Skills
+\section{Technical Skills}
+\noindent\textbf{Languages:} C/C++, CUDA, Python, Java, Fortran, SQL, Bash \\
+\noindent\textbf{Frameworks \& Systems:} JAX, PyGrain, TensorFlow, XLA, NumPy, MPI, OpenMP, RPC/IPC, TPU/GPU \\
+\noindent\textbf{Numerical Software:} PETSc, Trilinos, AMG, Eigen, BLAS, LAPACK, HYPRE
+
+\end{document}
