@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'resume.tex'
+      - 'generate_html.py'
       - '.github/workflows/compile-latex.yml'
 
 permissions:
@@ -18,20 +19,28 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Compile LaTeX document
+      - name: Compile LaTeX to PDF
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume.tex
 
-      - name: Commit and Push PDF
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Generate index.html from resume.tex
+        run: python3 generate_html.py resume.tex index.html
+
+      - name: Commit and push PDF + HTML
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add resume.pdf
-          # Check if there are changes before committing to avoid error exit codes
+          git add resume.pdf index.html
+          # Only commit if there are staged changes
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Auto-compiled resume.pdf [skip ci]"
+            git commit -m "Auto-compiled resume.pdf and index.html [skip ci]"
             git push
           fi

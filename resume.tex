@@ -49,25 +49,25 @@
 
 % Summary
 \section{Summary}
-Systems Engineer and Computational Scientist with a PhD in Applied Mathematics and 7+ years of experience designing high-performance computing systems, low-latency runtime components, and massive-scale simulation engines. Expert in \textbf{JAX/XLA compiler optimizations}, low-overhead \textbf{GPU/TPU acceleration (CUDA, XLA)}, zero-copy RPC architectures, and large-scale numerical fluid solvers. Proven track record of optimizing core compute infrastructure to drive significant cost savings and throughput increases (up to 3x) in production environments.
+Software Engineer and Computational Scientist with a PhD in Applied Mathematics and 7+ years of experience designing high-performance computing systems, low-latency runtime components, and massive-scale simulation engines. Expert in \textbf{JAX/XLA runtime and ML infrastructure} (data pipelines, embedding serving, distributed training at cross-datacenter scale), \textbf{low-latency C++ systems and GPU acceleration} (CUDA, XLA), and large-scale numerical solvers. Proven track record of optimizing core compute infrastructure to drive significant cost savings and throughput increases (up to 4x) in production environments.
 
 % Experience
 \section{Work Experience}
 
 \resumeHeading{Google LLC}{Sunnyvale, CA}{Software Engineer -- Machine Learning Infrastructure}{Apr. 2023 -- Present}
 \begin{itemize}[itemsep=4pt]
-    \resumeItem{\textbf{Data Infrastructure (PyGrain \& JAX Data):} Maintain and scale PyGrain and JAX Data, the foundational data pipeline libraries handling ingestion and processing for JAX-based training workloads globally across Google. Designed and built the PyGrain autotuner to dynamically optimize pipeline performance; engineered low-latency serving and inference infrastructure for large-scale embedding models.}
-    \resumeItem{\textbf{ML DNA (Scaling \& Infrastructure):} Designed and built Google's high-performance \textbf{JAX CPU embedding library} from the ground up, providing specialized infrastructure for accelerated embedding lookups. Engineered JAX Parameter Server Training (PST) and production scaling architectures optimized for massive-scale recommendation and ranking models powering Ads, YouTube, Play, and Geo.}
-    \resumeItem{\textbf{Performance Optimization:} Optimized parameter server infrastructure to deliver up to a \textbf{3x throughput improvement} in dense worker/server topographies by implementing zero-copy RPC handlers, custom cache-friendly C++ data structures, and low-overhead threading models.}
+    \resumeItem{\textbf{Data Infrastructure (PyGrain \& JAX Data):} Maintain and scale PyGrain and JAX Data, the foundational data pipeline libraries handling ingestion and processing for JAX-based training workloads globally across Google. Designed and built the PyGrain autotuner, a closed-loop online controller using Universal Scalability Law (USL) and Markovian queueing models to dynamically tune worker concurrency, prefetch depth, and batch parameters---matching manually-tuned pipeline performance without human intervention; engineered low-latency serving and inference infrastructure for large-scale embedding models.}
+    \resumeItem{\textbf{ML DNA (Scaling \& Infrastructure):} Designed and built Google's high-performance \textbf{JAX CPU embedding library} from the ground up, a native C++ library with cache-optimized embedding table layouts, lock-free lookup structures, and lookup coalescing---delivering 2x--4x throughput improvements over the incumbent TensorFlow-based solution for embedding serving. Engineered JAX Parameter Server Training (PST) and production scaling architectures optimized for massive-scale recommendation and ranking models powering Ads, YouTube, Play, and Geo.}
+    \resumeItem{\textbf{Performance Optimization:} Optimized parameter server infrastructure to deliver up to a \textbf{3x throughput improvement} in dense worker/server topographies by implementing copy-eliding RPC handlers, custom cache-friendly C++ data structures, and low-overhead threading models.}
     \resumeItem{\textbf{C++ Systems Engineering:} Developed a scalable native C++ optimizer library from scratch, introducing horizontally scalable optimization routines tailored specifically for parameter server topologies. Partnered directly with product teams to guide architectural migration strategies to TPU hardware, maximizing resource utilization.}
-    \resumeItem{\textbf{Megascale XLA:} Contributed as a core infrastructure engineer on the Megascale XLA team, focusing on vertical/horizontal scaling of large foundation model workloads. Co-authored network topology-aware collective communication primitives to facilitate efficient distributed ML training clusters operating across cross-metro infrastructure. Designed host-offloaded compute strategies and custom fused compiler passes in XLA to unblock training efficiency boundaries.}
+    \resumeItem{\textbf{Megascale XLA:} Contributed to the Megascale XLA team, implementing topology-aware collective communication primitives within the XLA runtime---including hierarchical tree-based collective planning across intra- and inter-datacenter network tiers---to enable efficient distributed training at cross-metro scale. Received the internal \textbf{``Gold Perfy'' Award} for this contribution.}
 \end{itemize}
 
 \vspace{6pt}
 
 \resumeHeading{Aurora Innovation}{Mountain View, CA}{Senior Software Engineer -- Motion Planning Simulation}{Oct. 2021 -- Apr. 2023}
 \begin{itemize}[itemsep=4pt]
-    \resumeItem{Architected core high-performance software components in C++ for a highly distributed, massive-scale motion planning simulation engine executing millions of autonomous vehicle scenarios daily.}
+    \resumeItem{Architected core high-performance software components in C++ for a highly distributed, massive-scale motion planning simulation engine executing hundreds of thousands of autonomous vehicle scenarios daily.}
     \resumeItem{Developed dynamic agent behavior routing frameworks, introducing adversarial interaction profiles and real-time lane-changing mechanics to evaluate safety-critical edge cases.}
     \resumeItem{Created automated validation tools for Foreign Object Debris (FOD) simulations, engineering workflows that dynamically combined real-world sensor logs with synthetic environmental augmentations.}
     \resumeItem{Discovered and executed sweeping runtime optimizations within the mapping and routing engine, generating audited infrastructure savings of \textbf{\textasciitilde\$130,000 per month} in cloud compute expenditures.}
@@ -79,7 +79,7 @@ Systems Engineer and Computational Scientist with a PhD in Applied Mathematics a
 \begin{itemize}[itemsep=4pt]
     \resumeItem{Maintained and optimized parallel fluid dynamics solvers within the flagship industrial simulation suite \textbf{STAR-CCM+}.}
     \resumeItem{Researched and implemented highly parallelized computational methods (\textbf{MPI, OpenMP}) to resolve large-scale, complex partial differential equations on multi-node cluster topographies.}
-    \resumeItem{Accelerated core Algebraic Multi-Grid (AMG) linear solvers via high-performance GPU offloading using \textbf{CUDA}.}
+    \resumeItem{Researched and developed GPU offloading strategies for core Algebraic Multi-Grid (AMG) linear solvers using \textbf{CUDA}.}
 \end{itemize}
 
 % Education
@@ -94,8 +94,8 @@ Systems Engineer and Computational Scientist with a PhD in Applied Mathematics a
 
 % Technical Skills
 \section{Technical Skills}
-\noindent\textbf{Languages:} C++ (C++11/14/17/20), CUDA, Python, Java, Fortran, Bash \\
-\noindent\textbf{HPC \& Compilers:} JAX, XLA (Accelerated Linear Algebra), PyGrain, TPU/GPU Hardware Acceleration, MPI, OpenMP, Concurrency \& Multi-threading \\
+\noindent\textbf{Languages:} C++ (C++11/14/17/20), CUDA, Python, Bash \\
+\noindent\textbf{HPC \& ML Infrastructure:} JAX, XLA (Accelerated Linear Algebra), PyGrain, TPU/GPU Hardware Acceleration, MPI, C++ Threading \\
 \noindent\textbf{Numerical Software:} PETSc, Trilinos, Eigen, BLAS/LAPACK, HYPRE, NumPy, SciPy
 
 \end{document}
