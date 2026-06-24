@@ -350,7 +350,14 @@ def render_exp_items(items):
 
 def render_education(edu):
     dates = latex_to_html(edu['dates'])
-    notes = ' '.join(latex_to_html(it) for it in edu['items']).strip()
+    if not edu['items']:
+        notes_html = ''
+    else:
+        notes_html = '          <ul style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; padding-left: 1.2rem;">\n'
+        for it in edu['items']:
+            notes_html += f'            <li style="margin-bottom: 0.25rem;">{latex_to_html(it)}</li>\n'
+        notes_html += '          </ul>'
+
     return (
         '      <section id="education">\n'
         '        <h2>Education</h2>\n'
@@ -360,9 +367,7 @@ def render_education(edu):
         '          </div>\n'
         f'          <div class="degree">{edu["degree"]}</div>\n'
         f'          <div class="date">{dates}</div>\n'
-        '          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">\n'
-        f'            {notes}\n'
-        '          </p>\n'
+f'{notes_html}\n'
         '        </div>\n'
         '      </section>'
     )
